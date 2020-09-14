@@ -12,9 +12,11 @@
 <body>
 
     <div class="container" id="app">
-        <div class="demo" @click="attachRed=!attachRed" :class="{red: attachRed}"></div>
-        <div class="demo" @click="attachGreen=!attachGreen" :class="{green: attachGreen}"></div>
-        <div class="demo" @click="attachBlue=!attachBlue" :class="{blue: attachBlue}"></div>
+        <div class="demo" @click="attachRed=!attachRed" :class="divClasses"></div>
+        <div class="demo" :class="[color,{red: attachRed}]"></div>
+        <div class="demo" :class="color"></div>
+        <hr>
+        <input type="text" v-model="color">
     </div>
 
     <script src="app.js"></script>
